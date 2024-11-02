@@ -17,7 +17,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("References")]
     public Rigidbody2D rb;
     public Grounded grounded;
-
+    private float stunStart;
+    private float stunDuration;
+    private float kbDir;
 
     private float m_CurrMoveVel;
     private float m_CurrMaxMoveSpeed;
@@ -33,7 +35,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float xInput = Input.GetAxisRaw("Horizontal");
+        float xInput = 0;
+        xInput = Input.GetAxisRaw("Horizontal");
+        // if (Time.time > stunStart + stunDuration) {
+        //     xInput = Input.GetAxisRaw("Horizontal");
+        // }
 
         // Accelerate
         m_CurrMoveVel = Mathf.Clamp(
@@ -68,6 +74,9 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (Time.time < stunStart + stunDuration) {
+            m_CurrMoveVel += kbDir;
+        }
         rb.velocity = new Vector2(m_CurrMoveVel, rb.velocity.y);
     }
 
@@ -94,5 +103,14 @@ public class PlayerMovement : MonoBehaviour
     {
         grounded.IsGrounded = false;
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+    }
+
+    public void addStun(float stunDur, Vector3 dir) {
+        if (stunDur + Time.time > stunDuration + Time.time) {
+            stunDuration = stunDur;
+        }
+        stunStart = Time.time;
+        kbDir = dir.x;
+        rb.AddForce(dir, ForceMode2D.Impulse);
     }
 }
