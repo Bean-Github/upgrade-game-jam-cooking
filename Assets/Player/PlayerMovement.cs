@@ -40,9 +40,9 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         int xInput = 0;
-        //xInput = Input.GetAxisRaw("Horizontal");
+        //xInput = Input.GetAxisRaw("Horizontal");\
         if (Time.time > stunStart + stunDuration) {
-            xInput = (int) Input.GetAxisRaw("Horizontal");
+           xInput = (int) Input.GetAxisRaw("Horizontal");
         }
         
         // Accelerate
@@ -127,9 +127,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void addStun(float stunDur, Vector3 dir) {
-        if (stunDur + Time.time > stunDuration + Time.time) {
-            stunDuration = stunDur;
-        }
+        // if (stunDur + Time.time > stunDuration + Time.time) {
+        //     
+        // }
+        stunDuration = stunDur;
         stunStart = Time.time;
         kbDir = dir.x;
         rb.AddForce(dir, ForceMode2D.Impulse);
