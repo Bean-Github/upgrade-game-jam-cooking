@@ -17,9 +17,15 @@ public class PlayerMovement : MonoBehaviour
     [Header("References")]
     public Rigidbody2D rb;
     public Grounded grounded;
+<<<<<<< Updated upstream
     private float stunStart;
     private float stunDuration;
     private float kbDir;
+=======
+    public Animator animator;
+    public Transform modelParent;
+
+>>>>>>> Stashed changes
 
     private float m_CurrMoveVel;
     private float m_CurrMaxMoveSpeed;
@@ -35,11 +41,15 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< Updated upstream
         float xInput = 0;
         xInput = Input.GetAxisRaw("Horizontal");
         // if (Time.time > stunStart + stunDuration) {
         //     xInput = Input.GetAxisRaw("Horizontal");
         // }
+=======
+        int xInput = (int) Input.GetAxisRaw("Horizontal");
+>>>>>>> Stashed changes
 
         // Accelerate
         m_CurrMoveVel = Mathf.Clamp(
@@ -54,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
             m_CurrMoveVel = Mathf.MoveTowards(m_CurrMoveVel, 0f, deceleration * Time.deltaTime);
         }
         
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Jump"))
         {
             m_CurrJumpDampTimer = jumpDampTime;
         }
@@ -70,6 +80,22 @@ public class PlayerMovement : MonoBehaviour
         {
             MidAirBehavior();
         }
+        Debug.Log(xInput);
+        if (xInput != 0)
+        {
+            if (xInput == -1)
+            {
+                modelParent.localScale = new Vector3(0.55f, 0.55f, -0.55f);
+                modelParent.localEulerAngles = new Vector3(0, 75, 0);
+            }
+            else
+            {
+                modelParent.localScale = new Vector3(0.55f, 0.55f, 0.55f);
+                modelParent.localEulerAngles = new Vector3(0, 105, 0);
+            }
+        }
+        animator.SetBool("Moving", xInput != 0);
+        animator.SetBool("Air", !grounded.IsGrounded);
     }
 
     void FixedUpdate()
@@ -103,6 +129,7 @@ public class PlayerMovement : MonoBehaviour
     {
         grounded.IsGrounded = false;
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        animator.SetTrigger("Jump");
     }
 
     public void addStun(float stunDur, Vector3 dir) {
