@@ -758,6 +758,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ramsey
       objectReference: {fileID: 0}
+    - target: {fileID: 8304835211329146777, guid: 1e9408ce9714e624facd4755c42cf70c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
