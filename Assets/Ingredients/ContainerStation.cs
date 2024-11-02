@@ -10,7 +10,15 @@ public class ContainerStation : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<PlayerHolding>().TryAddIngredient(objectToHold);
+            if (Input.GetKey(KeyCode.E))
+            {
+                PlayerHolding holding = collision.GetComponent<PlayerHolding>();
+
+                if (holding.TryAddIngredient(objectToHold))
+                {
+                    
+                }
+            }
         }
     }
 }
