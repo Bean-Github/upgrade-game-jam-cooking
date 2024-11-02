@@ -67,7 +67,15 @@ public class PlayerHolding : MonoBehaviour
         if (heldObject != null)
         {
             if (transformToDropTo != null)
+            {
                 heldObject.transform.position = transformToDropTo.position;
+            }
+            // Drop into nothing
+            else
+            {
+                Rigidbody2D rb = heldObject.AddComponent<Rigidbody2D>();
+                rb.velocity = GetComponent<Rigidbody2D>().velocity;
+            }
 
             heldObject.transform.parent = transformToDropTo;
             heldObject.transform.localScale = Vector3.one;

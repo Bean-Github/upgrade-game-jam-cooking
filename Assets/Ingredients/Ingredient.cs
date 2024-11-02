@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class Ingredient : MonoBehaviour
@@ -16,7 +17,7 @@ public class Ingredient : MonoBehaviour
 
     private void Update()
     {
-        
+
     }
 
 
@@ -26,7 +27,7 @@ public class Ingredient : MonoBehaviour
         {
             if (collision.GetComponent<PlayerHolding>().TryAddIngredient(this.gameObject))
             {
-
+                Destroy(GetComponent<Rigidbody2D>());
             }
         }
     }
