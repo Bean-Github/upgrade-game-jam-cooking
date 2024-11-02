@@ -20,6 +20,35 @@ public class Ingredient : MonoBehaviour
 
     }
 
+    public void PlaceInsideSomething()
+    {
+        Destroy(GetComponent<Rigidbody2D>());
+
+        transform.localScale = Vector3.one;
+
+        transform.localRotation = Quaternion.identity;
+
+        foreach (var boxCollider in GetComponents<BoxCollider2D>())
+        {
+            boxCollider.enabled = false;
+        }
+    }
+
+
+    public void DropInWorld()
+    {
+        Rigidbody2D rb = gameObject.AddComponent<Rigidbody2D>();
+
+        rb.drag = 2f;
+
+        transform.localScale = Vector3.one;
+
+        foreach (var boxCollider in GetComponents<BoxCollider2D>())
+        {
+            boxCollider.enabled = true;
+        }
+    }
+
 
     public void OnTriggerStay2D(Collider2D collision)
     {
@@ -27,7 +56,6 @@ public class Ingredient : MonoBehaviour
         {
             if (collision.GetComponent<PlayerHolding>().TryAddIngredient(this.gameObject))
             {
-                Destroy(GetComponent<Rigidbody2D>());
             }
         }
     }

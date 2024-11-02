@@ -36,10 +36,10 @@ public class PlayerHolding : MonoBehaviour
             ingredientToAdd.transform.parent = holdingLocation;
 
             heldObject = ingredientToAdd;
-            heldObject.transform.localScale = Vector3.one;
 
             currentIngredient = heldObject.GetComponent<Ingredient>();
-            
+            currentIngredient.PlaceInsideSomething();
+
             return true;
         }
         return false;
@@ -54,9 +54,9 @@ public class PlayerHolding : MonoBehaviour
             newObject.GetComponent<Ingredient>().ingredientData = addedData;
 
             heldObject = newObject;
-            heldObject.transform.localScale = Vector3.one;
 
             currentIngredient = newObject.GetComponent<Ingredient>();
+            currentIngredient.PlaceInsideSomething();
 
             return true;
         }
@@ -65,31 +65,24 @@ public class PlayerHolding : MonoBehaviour
 
     public void DropIngredient()
     {
-        Rigidbody2D rb = heldObject.AddComponent<Rigidbody2D>();
-        rb.velocity = GetComponent<Rigidbody2D>().velocity;
-
+        heldObject.GetComponent<Ingredient>().DropInWorld();
         heldObject.transform.parent = null;
-        heldObject.transform.localScale = Vector3.one;
 
         heldObject = null;
         currentIngredient = null;
     }
 
-
     public void DropIngredient(Transform transformToDropTo)
     {
         if (heldObject != null)
         {
-            if (transformToDropTo != null)
-            {
-                heldObject.transform.position = transformToDropTo.position;
-            }
+            heldObject.transform.position = transformToDropTo.position;
 
             heldObject.transform.parent = transformToDropTo;
-            heldObject.transform.localScale = Vector3.one;
 
-            heldObject = null;
-            currentIngredient = null;
+            heldObject.GetComponent<Ingredient>().PlaceInsideSomething();
+
+            ResetHeldObject();
         }
     }
 
@@ -99,9 +92,15 @@ public class PlayerHolding : MonoBehaviour
         {
             execute(heldObject);
 
-            heldObject = null;
-            currentIngredient = null;
+            ResetHeldObject();
+            heldObject.GetComponent<Ingredient>().PlaceInsideSomething();
         }
+    }
+
+    private void ResetHeldObject()
+    {
+        heldObject = null;
+        currentIngredient = null;
     }
 
 
