@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float acceleration;
     public float deceleration;
 
+    public float jumpDampTime;
 
     [Header("References")]
     public Rigidbody2D rb;
@@ -20,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float m_CurrMoveVel;
     private float m_CurrMaxMoveSpeed;
+    private float m_CurrJumpDampTimer;
 
 
     // Start is called before the first frame update
@@ -27,16 +29,15 @@ public class PlayerMovement : MonoBehaviour
     {
         
     }
-
-    float xInput;
+    
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        xInput = Input.GetAxisRaw("Horizontal");
+        float xInput = Input.GetAxisRaw("Horizontal");
 
         // Accelerate
         m_CurrMoveVel = Mathf.Clamp(
-            xInput * acceleration * Time.fixedDeltaTime + m_CurrMoveVel, 
+            xInput * acceleration * Time.deltaTime + m_CurrMoveVel, 
             -m_CurrMaxMoveSpeed, 
             m_CurrMaxMoveSpeed
         );
@@ -44,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
         // Decelerate
         if (Mathf.Abs(xInput) == 0f)
         {
-            m_CurrMoveVel = Mathf.MoveTowards(m_CurrMoveVel, 0f, deceleration * Time.fixedDeltaTime);
+            m_CurrMoveVel = Mathf.MoveTowards(m_CurrMoveVel, 0f, deceleration * Time.deltaTime);
         }
 
         // While Grounded
@@ -59,35 +60,32 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void FixedUpdate()
+    {
+        rb.velocity = new Vector2(m_CurrMoveVel, rb.velocity.y);
+    }
+
 
     private void GroundedBehavior()
     {
-        if (m_PreJump)
-        {
-            Jump();
-        }
-
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Jump();
-        }
-
         m_CurrMaxMoveSpeed = maxMovementSpeed;
-
-        rb.position += Vector2.right * m_CurrMoveVel * Time.fixedDeltaTime;
+        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            m_CurrJumpDampTimer = jumpDampTime;
+        }
+        CheckJump();
     }
-
-    private bool m_PreJump;
+    
     private void MidAirBehavior()
     {
         m_CurrMaxMoveSpeed = airMaxMovementSpeed;
 
-        rb.position += Vector2.right * m_CurrMoveVel * Time.fixedDeltaTime;
-
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            StartCoroutine(JumpDampTimer());
+            m_CurrJumpDampTimer = jumpDampTime;
         }
+        CheckJump();
     }
 
     private void Jump()
@@ -97,10 +95,12 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = Vector3.up * jumpForce;
     }
 
-    private IEnumerator JumpDampTimer()
+    private void CheckJump()
     {
-        m_PreJump = true;
-        yield return new WaitForSeconds(0.5f);
-        m_PreJump = false;  
+        m_CurrJumpDampTimer = Mathf.Max(m_CurrJumpDampTimer - Time.deltaTime, 0f);
+        if (m_CurrJumpDampTimer > 0 && grounded.IsGrounded)
+        {
+            Jump();
+        }
     }
 }
