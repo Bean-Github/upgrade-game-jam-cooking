@@ -47,6 +47,12 @@ public class PlayerMovement : MonoBehaviour
         {
             m_CurrMoveVel = Mathf.MoveTowards(m_CurrMoveVel, 0f, deceleration * Time.deltaTime);
         }
+        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            m_CurrJumpDampTimer = jumpDampTime;
+        }
+        CheckJump();
 
         // While Grounded
         if (grounded.IsGrounded)
@@ -65,34 +71,14 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(m_CurrMoveVel, rb.velocity.y);
     }
 
-
     private void GroundedBehavior()
     {
         m_CurrMaxMoveSpeed = maxMovementSpeed;
-        
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            m_CurrJumpDampTimer = jumpDampTime;
-        }
-        CheckJump();
     }
-    
+
     private void MidAirBehavior()
     {
         m_CurrMaxMoveSpeed = airMaxMovementSpeed;
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            m_CurrJumpDampTimer = jumpDampTime;
-        }
-        CheckJump();
-    }
-
-    private void Jump()
-    {
-        grounded.IsGrounded = false;
-        rb.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
-        rb.velocity = Vector3.up * jumpForce;
     }
 
     private void CheckJump()
@@ -102,5 +88,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
         }
+    }
+    
+    private void Jump()
+    {
+        grounded.IsGrounded = false;
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }
 }
