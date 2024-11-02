@@ -102,11 +102,11 @@ MonoBehaviour:
   minCD: 5
   maxCD: 6
   jumping: 0
-  movementSpeed: 4
+  movementSpeed: 6
   targetX: 0
   targetY: 0
-  minX: -15
-  maxX: 15
+  minX: -12
+  maxX: 12
   minY: -3
   maxY: 7
 --- !u!114 &4927339531579126612
@@ -121,6 +121,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4407cb6078107644bd9336a7d410313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextAttack: 0
-  attackCD: 0.5
+  nextMove: 0
+  moveCD: 4
+  currMove: 0
+  volleyCD: 0.5
+  nextVolleyAttack: 0
+  volleyDur: 3
+  volleyStart: 0
+  inaccuracy: 3
   projectile: {fileID: 6003719450261503978, guid: 8555980ce860d924c90df4823735951a, type: 3}
+  idiotSandwhich: {fileID: 3008578090598934924, guid: 16f96612fc5ecb247a1771b2125bb80f, type: 3}

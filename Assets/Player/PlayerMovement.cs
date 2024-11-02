@@ -39,11 +39,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (Time.time > stunStart + stunDuration) {
-        //     xInput = Input.GetAxisRaw("Horizontal");
-        // }
-        int xInput = (int) Input.GetAxisRaw("Horizontal");
-
+        int xInput = 0;
+        //xInput = Input.GetAxisRaw("Horizontal");
+        if (Time.time > stunStart + stunDuration) {
+            xInput = (int) Input.GetAxisRaw("Horizontal");
+        }
+        
         // Accelerate
         m_CurrMoveVel = Mathf.Clamp(
             xInput * acceleration * Time.deltaTime + m_CurrMoveVel, 
