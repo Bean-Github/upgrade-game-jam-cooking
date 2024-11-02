@@ -17,16 +17,14 @@ public class PlayerMovement : MonoBehaviour
     [Header("References")]
     public Rigidbody2D rb;
     public Grounded grounded;
-<<<<<<< Updated upstream
+    
     private float stunStart;
     private float stunDuration;
     private float kbDir;
-=======
+    
     public Animator animator;
     public Transform modelParent;
-
->>>>>>> Stashed changes
-
+    
     private float m_CurrMoveVel;
     private float m_CurrMaxMoveSpeed;
     private float m_CurrJumpDampTimer;
@@ -41,15 +39,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< Updated upstream
-        float xInput = 0;
-        xInput = Input.GetAxisRaw("Horizontal");
         // if (Time.time > stunStart + stunDuration) {
         //     xInput = Input.GetAxisRaw("Horizontal");
         // }
-=======
         int xInput = (int) Input.GetAxisRaw("Horizontal");
->>>>>>> Stashed changes
 
         // Accelerate
         m_CurrMoveVel = Mathf.Clamp(
