@@ -17,9 +17,7 @@ public class GameTypes
         SlicedOnion,
         Cheese,
         RawMeat,
-        CookedMeat,
-        Ketchup,
-        Mayo
+        CookedMeat
     }
 
     //public enum CookingStation

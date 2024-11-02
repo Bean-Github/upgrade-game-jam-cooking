@@ -12,5 +12,4 @@ public class IngredientScriptableObject : ScriptableObject
 
     public GameTypes.Ingredient ingredient;
 
-
 }

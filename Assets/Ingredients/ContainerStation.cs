@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class ContainerStation : MonoBehaviour
 {
-    public GameObject objectToHold;
+    public IngredientScriptableObject ingredientDataToHold;
+
+    public GameObject ingredientBlueprint;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -14,11 +16,17 @@ public class ContainerStation : MonoBehaviour
             {
                 PlayerHolding holding = collision.GetComponent<PlayerHolding>();
 
-                if (holding.TryAddIngredient(objectToHold))
+
+                if (holding.TryAddIngredient(ingredientBlueprint, ingredientDataToHold))
                 {
-                    
+                    // If add is successful
+                }
+                else
+                {
+                    // If not successful
                 }
             }
         }
+
     }
 }

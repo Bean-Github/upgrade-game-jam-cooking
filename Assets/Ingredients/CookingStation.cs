@@ -1,31 +1,135 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class CookingStation : MonoBehaviour
 {
+    public GameObject storedObject;
+    public IngredientScriptableObject ingredientToConvertTo;
+
     public PlayerHolding playerHolding;
 
-    public bool canUse;
+    public Transform storedObjectLocation;
+
+    public bool doneCooking;
+
+    public GameObject ingredientBlueprint;
+
+    public float cookTime;
+    public Slider progressSlider;
+
+    private bool touchingPlayer;
+
+
+    protected void Start()
+    {
+        progressSlider.maxValue = cookTime;
+
+        doneCooking = false;
+    }
+
+    private void Update()
+    {
+        // Pick up cooked object
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (doneCooking)
+            {
+                PlayerPickupBehavior();
+            }
+        }
+    }
 
     public virtual void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            if (Input.GetKey(KeyCode.E) && canUse)
+            touchingPlayer = true;
+
+            // Inserts object into cooking
+            if (Input.GetKey(KeyCode.E))
             {
-                PlayerInsideBehavior();
+                if (storedObject == null)
+                {
+                    PlayerInsertBehavior();
+                }
+            }
+
+            // Cooking behavior
+            if (storedObject != null && !doneCooking)
+            {
+                if (Input.GetKey(KeyCode.E))
+                {
+                    progressSlider.value += Time.fixedDeltaTime;
+                }
+                else
+                {
+                    ResetSlider();
+                }
+            }
+
+            // Finish Cooking
+            if (progressSlider.value >= cookTime && storedObject != null)
+            {
+                FinishCookingObject();
             }
         }
     }
 
-    public virtual void PlayerInsideBehavior()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-
+        if (collision.CompareTag("Player"))
+        {
+            touchingPlayer = false;
+            ResetSlider();
+        }
     }
 
-    private IEnumerator DisableUsage()
+
+    public virtual void PlayerInsertBehavior() 
     {
-        yield return null;
+        
     }
+
+    public virtual void PlayerPickupBehavior()
+    {
+        playerHolding.TryAddIngredient(storedObject);
+        storedObject = null;
+        doneCooking = false;
+    }
+
+    protected void StartCookingObject()
+    {
+        playerHolding.DropIngredient(storedObjectLocation);
+
+        storedObject = storedObjectLocation.GetChild(0).gameObject;
+    }
+
+    // Changes displayed object
+    protected void FinishCookingObject()
+    {
+        Destroy(storedObject);
+
+        ResetSlider();
+
+        storedObject = Instantiate(
+            ingredientBlueprint,
+            storedObjectLocation.position,
+            Quaternion.identity,
+            storedObjectLocation
+        );
+
+        storedObject.GetComponent<Ingredient>().ingredientData = ingredientToConvertTo;
+
+        doneCooking = true;
+    }
+
+    protected void ResetSlider()
+    {
+        progressSlider.value = 0f;
+    }
+
 }
+

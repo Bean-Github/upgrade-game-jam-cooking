@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class ChoppingStation : CookingStation
 {
-    public GameObject[] choppedObjects;
+    public IngredientScriptableObject choppedLettuce;
+    public IngredientScriptableObject choppedTomato;
+    public IngredientScriptableObject choppedOnion;
 
-    public override void PlayerInsideBehavior()
+    public override void PlayerInsertBehavior()
     {
-        base.PlayerInsideBehavior();
+        base.PlayerInsertBehavior();
 
         // Check if compatible
         if (playerHolding.heldObject == null)
@@ -19,10 +21,16 @@ public class ChoppingStation : CookingStation
         switch (playerHolding.currentIngredient.ingredientData.ingredient)
         {
             case GameTypes.Ingredient.Lettuce:
+                StartCookingObject();
+                ingredientToConvertTo = choppedLettuce;
                 break;
             case GameTypes.Ingredient.Tomato:
+                StartCookingObject();
+                ingredientToConvertTo = choppedTomato;
                 break;
             case GameTypes.Ingredient.Onion:
+                StartCookingObject();
+                ingredientToConvertTo = choppedOnion;
                 print("HI");
                 break;
             default:
