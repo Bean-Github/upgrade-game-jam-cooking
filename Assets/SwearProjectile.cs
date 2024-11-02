@@ -15,6 +15,10 @@ public class SwearProjectile : MonoBehaviour
     public float startTime;
     public float dur;
     public Vector3 dir;
+    public Rigidbody2D rb;
+    public float stunDur;
+    public float kbForceX;
+    public float kbForceY;
     void Start()
     {
         swear.text = "";
@@ -31,21 +35,29 @@ public class SwearProjectile : MonoBehaviour
             else if (charNum == 7) {swear.text += "&";}
             else if (charNum == 8) {swear.text += "*";}
         }
-        col.size = new Vector2(0.5f, charCount * 0.7f);
+        col.size = new Vector2(0.5f, charCount * 0.5f);
         startTime = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        trans.Translate(dir * Time.deltaTime * speed);
-        print(Vector3.forward);
+        // trans.Translate(trans.forward * Time.deltaTime * speed);
+        rb.velocity = new Vector3(dir.x, dir.y, 0).normalized * speed;
         if (Time.time > startTime + dur) {
             Destroy(this.transform.parent.gameObject);
         }
     }
 
-    private void OnTriggerEnter() {
-        Destroy(this.gameObject);
+    void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("Player")) {
+            if (collision.gameObject.transform.position.x - this.transform.position.x > 0) {
+                collision.gameObject.GetComponent<PlayerMovement>().addStun(stunDur, new Vector3(kbForceX,kbForceY,0));
+            } else {
+                collision.gameObject.GetComponent<PlayerMovement>().addStun(stunDur, new Vector3(-1 * kbForceX, kbForceY,0));
+            }            
+            Destroy(this.transform.parent.gameObject);
+        }
+        
     }
 }

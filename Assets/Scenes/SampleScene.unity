@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 335152840}
   m_Layer: 6
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -508,7 +508,7 @@ GameObject:
   - component: {fileID: 573033172}
   m_Layer: 6
   m_Name: Ground (1)
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1016,6 +1016,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1077360093}
   m_CullTransparentMesh: 1
+--- !u!1001 &1111095058
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3092748556850136886, guid: 1e9408ce9714e624facd4755c42cf70c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092748556850136886, guid: 1e9408ce9714e624facd4755c42cf70c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092748556850136886, guid: 1e9408ce9714e624facd4755c42cf70c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092748556850136886, guid: 1e9408ce9714e624facd4755c42cf70c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092748556850136886, guid: 1e9408ce9714e624facd4755c42cf70c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092748556850136886, guid: 1e9408ce9714e624facd4755c42cf70c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092748556850136886, guid: 1e9408ce9714e624facd4755c42cf70c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092748556850136886, guid: 1e9408ce9714e624facd4755c42cf70c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092748556850136886, guid: 1e9408ce9714e624facd4755c42cf70c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092748556850136886, guid: 1e9408ce9714e624facd4755c42cf70c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8304835211329146777, guid: 1e9408ce9714e624facd4755c42cf70c, type: 3}
+      propertyPath: m_Name
+      value: Ramsey
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1e9408ce9714e624facd4755c42cf70c, type: 3}
 --- !u!1 &1326264811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,7 +1339,7 @@ GameObject:
   - component: {fileID: 1572455021}
   m_Layer: 6
   m_Name: Ground (2)
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1479,7 +1536,7 @@ GameObject:
   - component: {fileID: 2137286960}
   m_Layer: 6
   m_Name: Ground (3)
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2784,3 +2841,4 @@ SceneRoots:
   - {fileID: 1326264815}
   - {fileID: 1918707537}
   - {fileID: 183454176}
+  - {fileID: 1111095058}

@@ -15,6 +15,11 @@ public class RamseyMovement : MonoBehaviour
     private float c; 
     public float targetX;
     public float targetY;
+    public float minX;
+    public float maxX;
+    
+    public float minY;
+    public float maxY;
 
     void Start()
     {
@@ -49,11 +54,11 @@ public class RamseyMovement : MonoBehaviour
         if (!jumping && Time.time > nextJump) { 
             //a = Random.Range(0.05f, 1.05f);
             if (this.transform.position.x < 0) {
-                targetX = Random.Range(this.transform.position.x + 0.1f, 8.5f);
+                targetX = Random.Range(this.transform.position.x + 0.1f, maxX);
             } else {
-                targetX = Random.Range(-8.5f, this.transform.position.x - 0.1f);
+                targetX = Random.Range(minX, this.transform.position.x - 0.1f);
             }
-            targetY = Random.Range(-1f, 4.2f);
+            targetY = Random.Range(minY, maxY);
             nextJump = Time.time + Random.Range(minCD, maxCD);
             jumping = true;
 
