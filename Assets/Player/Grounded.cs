@@ -31,14 +31,20 @@ public class Grounded : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        IsGrounded = true;
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            IsGrounded = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (gameObject.activeSelf)
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            StartCoroutine(FoxTrotTimer());
+            if (gameObject.activeSelf)
+            {
+                StartCoroutine(FoxTrotTimer());
+            }
         }
     }
 

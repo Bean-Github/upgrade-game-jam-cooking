@@ -11,4 +11,6 @@ public class IngredientScriptableObject : ScriptableObject
     public Mesh ingredientMesh;
 
     public GameTypes.Ingredient ingredient;
+
+
 }

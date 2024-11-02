@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerHolding : MonoBehaviour
 {
-    public GameObject currentIngredient;
+    public GameObject heldObject;
     public Transform holdingLocation;
+    public Ingredient currentIngredient;
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +22,14 @@ public class PlayerHolding : MonoBehaviour
 
     public bool TryAddIngredient(GameObject ingredientToAdd)
     {
-        if (currentIngredient == null)
+        if (heldObject == null)
         {
-            Instantiate(ingredientToAdd, holdingLocation.position, Quaternion.identity, holdingLocation);
+            GameObject newObject = Instantiate(ingredientToAdd, holdingLocation.position, Quaternion.identity, holdingLocation);
+            
+            heldObject = newObject;
+
+            currentIngredient = newObject.GetComponent<Ingredient>();
+            
             return true;
         }
         return false;

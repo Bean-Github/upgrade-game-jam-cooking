@@ -15,9 +15,4 @@ public class Ingredient : MonoBehaviour
         ingredientMeshFilter.mesh = ingredientData.ingredientMesh;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
