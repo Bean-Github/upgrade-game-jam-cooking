@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerHolding : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class PlayerHolding : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q) && !inStation)
         {
-            DropIngredient(null);
+            DropIngredient();
         }
     }
 
@@ -62,6 +63,19 @@ public class PlayerHolding : MonoBehaviour
         return false;
     }
 
+    public void DropIngredient()
+    {
+        Rigidbody2D rb = heldObject.AddComponent<Rigidbody2D>();
+        rb.velocity = GetComponent<Rigidbody2D>().velocity;
+
+        heldObject.transform.parent = null;
+        heldObject.transform.localScale = Vector3.one;
+
+        heldObject = null;
+        currentIngredient = null;
+    }
+
+
     public void DropIngredient(Transform transformToDropTo)
     {
         if (heldObject != null)
@@ -70,15 +84,20 @@ public class PlayerHolding : MonoBehaviour
             {
                 heldObject.transform.position = transformToDropTo.position;
             }
-            // Drop into nothing
-            else
-            {
-                Rigidbody2D rb = heldObject.AddComponent<Rigidbody2D>();
-                rb.velocity = GetComponent<Rigidbody2D>().velocity;
-            }
 
             heldObject.transform.parent = transformToDropTo;
             heldObject.transform.localScale = Vector3.one;
+
+            heldObject = null;
+            currentIngredient = null;
+        }
+    }
+
+    public void DropIngredient(Action<GameObject> execute)
+    {
+        if (heldObject != null)
+        {
+            execute(heldObject);
 
             heldObject = null;
             currentIngredient = null;
