@@ -8,7 +8,7 @@ public class Stack : MonoBehaviour
     private GameObject burger;
     private bool isEmpty;
     private bool actionTriggered;
-    public IngredientScriptableObject noneData;
+    private bool playerInTrigger;
 
     void Start()
     {
@@ -16,22 +16,12 @@ public class Stack : MonoBehaviour
         initBurger();
         isEmpty = true;
         actionTriggered = false;
+        playerInTrigger = false;
     }
 
-    private void initBurger()
+    void Update()
     {
-        float height = GetComponent<MeshRenderer>().bounds.size.y;
-
-        burger = new GameObject("Burger");
-        burger.AddComponent<Ingredient>().ingredientData = noneData;
-        burger.tag = "Burger";
-        burger.transform.parent = this.gameObject.transform;
-        burger.transform.position = this.gameObject.transform.position + height / 2 * Vector3.up;
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
+        if (playerInTrigger)
         {
             if (Input.GetKey(KeyCode.E) && !actionTriggered)
             {
@@ -54,10 +44,31 @@ public class Stack : MonoBehaviour
         }
     }
 
+    private void initBurger()
+    {
+        float height = GetComponent<MeshFilter>().mesh.bounds.size.y;
+        float center = GetComponent<MeshFilter>().mesh.bounds.center.y;
+
+        burger = new GameObject("Burger");
+        burger.AddComponent<Burger>();
+        burger.tag = "Burger";
+        burger.transform.parent = this.gameObject.transform;
+        burger.transform.position = this.gameObject.transform.position + (center) * Vector3.up;
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            playerInTrigger = true;
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            playerInTrigger = false;
             actionTriggered = false;
         }
     }
@@ -66,6 +77,7 @@ public class Stack : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            playerInTrigger = true;
             actionTriggered = false;
         }
     }
@@ -76,16 +88,21 @@ public class Stack : MonoBehaviour
 
         GameObject c = obj.transform.GetChild(0).gameObject;
 
-        MeshRenderer mr = c.GetComponent<MeshRenderer>();
+        Mesh mr = c.GetComponent<MeshFilter>().mesh;
         Bounds bounds = mr.bounds;
         Vector3 size = bounds.size;
+        Vector3 center = bounds.center;
 
-        Vector3 offset = new Vector3(0, topPos + size.y / 2, 0);
+        Vector3 offset = new Vector3(0, topPos + size.y - center.y, 0);
         topPos += size.y;
 
         obj.transform.parent = burger.transform;
         obj.transform.position = burger.transform.position + offset;
         obj.transform.localScale = Vector3.one;
+
+        Ingredient ing = obj.GetComponent<Ingredient>();
+
+        burger.GetComponent<Burger>().ingredients.Add(ing);
 
         isEmpty = false;
     }

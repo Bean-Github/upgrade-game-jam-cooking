@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: None
   m_EditorClassIdentifier: 
   ingredientName: none
-  ingredientMesh: {fileID: 0}
+  ingredientMesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
   ingredient: 0

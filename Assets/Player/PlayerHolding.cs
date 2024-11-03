@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
 public class PlayerHolding : MonoBehaviour
 {
@@ -28,8 +29,27 @@ public class PlayerHolding : MonoBehaviour
     {
         if (heldObject == null)
         {
-            //GameObject newObject = Instantiate(ingredientToAdd, holdingLocation.position, Quaternion.identity, holdingLocation);
-            
+            if (ingredientToAdd.CompareTag("Burger"))
+            {
+                if (ingredientToAdd.transform.childCount == 1)
+                {
+                    GameObject burger = ingredientToAdd;
+                    ingredientToAdd = ingredientToAdd.transform.GetChild(0).gameObject;
+                    Destroy(burger);
+                } else
+                {
+                    ingredientToAdd.transform.position = holdingLocation.position;
+                    ingredientToAdd.transform.parent = holdingLocation;
+
+                    heldObject = ingredientToAdd;
+
+                    currentIngredient = null;
+
+                    return true;
+                }
+
+            }
+
             ingredientToAdd.transform.position = holdingLocation.position;
             ingredientToAdd.transform.parent = holdingLocation;
 
@@ -37,6 +57,7 @@ public class PlayerHolding : MonoBehaviour
 
             currentIngredient = heldObject.GetComponent<Ingredient>();
             currentIngredient.PlaceInsideSomething();
+            
 
             return true;
         }
@@ -63,35 +84,47 @@ public class PlayerHolding : MonoBehaviour
 
     public void DropIngredient()
     {
-        heldObject.GetComponent<Ingredient>().DropInWorld();
-        heldObject.transform.parent = null;
+        if (heldObject == null) return;
 
-        heldObject = null;
-        currentIngredient = null;
+        if (heldObject.CompareTag("Burger"))
+        {
+            Burger burger = heldObject.GetComponent<Burger>();
+            burger.drop();
+            heldObject.transform.parent = null;
+
+            heldObject = null;
+            currentIngredient = null;
+        } else
+        {
+            heldObject.GetComponent<Ingredient>().DropInWorld();
+            heldObject.transform.parent = null;
+
+            heldObject = null;
+            currentIngredient = null;
+        }
     }
 
     public void DropIngredient(Transform transformToDropTo)
     {
-        if (heldObject != null)
-        {
-            heldObject.transform.position = transformToDropTo.position;
+        if (heldObject == null) return;
 
-            heldObject.transform.parent = transformToDropTo;
+        heldObject.transform.position = transformToDropTo.position;
 
-            heldObject.GetComponent<Ingredient>().PlaceInsideSomething();
+        heldObject.transform.parent = transformToDropTo;
 
-            ResetHeldObject();
-        }
+        heldObject.GetComponent<Ingredient>().PlaceInsideSomething();
+
+        ResetHeldObject();
     }
 
     public void DropIngredient(Action<GameObject> execute)
     {
-        if (heldObject != null)
+        if (heldObject != null && !heldObject.CompareTag("Burger"))
         {
             execute(heldObject);
 
             ResetHeldObject();
-            heldObject.GetComponent<Ingredient>().PlaceInsideSomething();
+            //heldObject.GetComponent<Ingredient>().PlaceInsideSomething();
         }
     }
 
