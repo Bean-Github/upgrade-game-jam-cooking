@@ -30,9 +30,9 @@ public class RamseyAttack : MonoBehaviour
     public GameObject projectile;
     public GameObject idiotSandwhich;
     
-    public float algCD;
-    public float lastAlg;
-    public GameObject algscreen;
+    //public float algCD;
+    //public float lastAlg;
+    //public GameObject algscreen;
     public UnityEngine.Vector3 lastDir;
     public Rigidbody2D rb;
     void Start()
@@ -43,14 +43,15 @@ public class RamseyAttack : MonoBehaviour
         currMove = Attack.SwearVolley;
         aggro = true;
         moveCD = 4f;
-        algCD = Random.Range(25,30);
-        lastAlg = 0;
+        //algCD = Random.Range(25,30);
+        //lastAlg = 0;
         //algscreen = GameObject.FindGameObjectWithTag("AllGoodScreen");
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
         if (!algscreen.activeSelf && Time.time > lastAlg + algCD) {
             aggro = false;
             algscreen.SetActive(true);
@@ -60,6 +61,7 @@ public class RamseyAttack : MonoBehaviour
             rb.bodyType = RigidbodyType2D.Static;
 
         }
+        */
 
         if (aggro && !movem.jumping && Time.time > nextMove) {
             currMove = (Attack)Random.Range(0,2);
@@ -82,6 +84,7 @@ public class RamseyAttack : MonoBehaviour
         }
 
     }
+    /*
     public void checkAllGood(string s) {
         if (s.ToLower().Equals("all good!")) {
             aggro = true;
@@ -95,4 +98,5 @@ public class RamseyAttack : MonoBehaviour
             lastAlg = Time.time;
         }
     }
+    */
 }
