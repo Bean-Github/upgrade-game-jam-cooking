@@ -150,6 +150,7 @@ public class Stack : MonoBehaviour
     public void handleRemove()
     {
         burger.transform.position -= Vector3.up * transform.childCount * 0.5f;
+        burger.transform.rotation = Quaternion.identity;
         playerHolding.TryAddIngredient(burger);
 
         topPos = 0f;
