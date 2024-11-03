@@ -11641,6 +11641,56 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1726612656}
     m_Modifications:
+    - target: {fileID: 542721438230670153, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 542721438230670153, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.64278764
+      objectReference: {fileID: 0}
+    - target: {fileID: 542721438230670153, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 542721438230670153, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7660445
+      objectReference: {fileID: 0}
+    - target: {fileID: 542721438230670153, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 542721438230670153, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782063830326345330, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_text
+      value: 'ORDER:
+
+        BUN
+
+        CHEESE
+
+        ONIONS
+
+        LETTUCE
+
+        TOMATO
+
+        PATTY
+
+        BUN'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782063830326345330, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_fontSize
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782063830326345330, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 2025873449286808631, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
       propertyPath: playerHolding
       value: 
@@ -11648,7 +11698,15 @@ PrefabInstance:
     - target: {fileID: 2453473179293669764, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 9891fb4df3fba4699bf61bbd12fbbe24, type: 2}
+      objectReference: {fileID: 2100000, guid: e21dcc64942044207b6438fa31eaba6e, type: 2}
+    - target: {fileID: 3814086667713566359, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814086667713566359, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.3
+      objectReference: {fileID: 0}
     - target: {fileID: 4525370421039355722, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
       propertyPath: m_Size.x
       value: 3.2696114
@@ -11704,6 +11762,22 @@ PrefabInstance:
     - target: {fileID: 5222997269360136296, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699306032096153895, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_Size.x
+      value: 0.08659507
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699306032096153895, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699306032096153895, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.026795827
+      objectReference: {fileID: 0}
+    - target: {fileID: 6185923848569222648, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6496500353022862698, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
       propertyPath: m_Name
