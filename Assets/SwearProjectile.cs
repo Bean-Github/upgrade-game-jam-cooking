@@ -50,7 +50,7 @@ public class SwearProjectile : MonoBehaviour
         else if (swearID == 9)
             swear.text = "IT'S RAW";
         else if (swearID == 10)
-            swear.text = "YOU POOR SOUL";
+            swear.text = "POOR SOUL";
         //col.size = new Vector2(0.5f, charCount * 0.5f);
         startTime = Time.time;
     }
