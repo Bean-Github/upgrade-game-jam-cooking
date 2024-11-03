@@ -86,9 +86,9 @@ MonoBehaviour:
   storedObjectLocation: {fileID: 0}
   doneCooking: 0
   ingredientBlueprint: {fileID: 0}
-  cookTime: 0
-  progressSlider: {fileID: 0}
-  cookedMeat: {fileID: 0}
+  cookTime: 2
+  progressSlider: {fileID: 2788363332762062760}
+  cookedMeat: {fileID: 11400000, guid: 22d35a359347c834f8b818aa101029b2, type: 2}
 --- !u!61 &7119290128498369028
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -276,15 +276,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cooking Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6820858511288973575, guid: 268cfc1854b152c4eaced7a6016e573b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8671983639703371747, guid: 268cfc1854b152c4eaced7a6016e573b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 268cfc1854b152c4eaced7a6016e573b, type: 3}
+--- !u!114 &2788363332762062760 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7062835718404386942, guid: 268cfc1854b152c4eaced7a6016e573b, type: 3}
+  m_PrefabInstance: {fileID: 4951279014387843030}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8890014967089103469 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4605449061085904315, guid: 268cfc1854b152c4eaced7a6016e573b, type: 3}

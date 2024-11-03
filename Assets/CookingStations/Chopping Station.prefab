@@ -278,9 +278,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cooking Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6820858511288973575, guid: 268cfc1854b152c4eaced7a6016e573b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8671983639703371747, guid: 268cfc1854b152c4eaced7a6016e573b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -9,8 +9,6 @@ public class PlayerHolding : MonoBehaviour
     public Transform holdingLocation;
     public Ingredient currentIngredient;
 
-    public bool inStation;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +18,7 @@ public class PlayerHolding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && !inStation)
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             DropIngredient();
         }
@@ -108,7 +106,6 @@ public class PlayerHolding : MonoBehaviour
     {
         if (collision.CompareTag("Station"))
         {
-            inStation = true;
         }
     }
 
@@ -116,7 +113,6 @@ public class PlayerHolding : MonoBehaviour
     {
         if (collision.CompareTag("Station"))
         {
-            inStation = false;
         }
     }
 
