@@ -13,7 +13,7 @@ public class ChoppingStation : CookingStation
         base.PlayerInsertBehavior();
 
         // Check if compatible
-        if (playerHolding.heldObject == null)
+        if (playerHolding.heldObject == null || playerHolding.CompareTag("Burger"))
         {
             return;
         }
