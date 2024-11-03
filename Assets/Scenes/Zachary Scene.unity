@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 12495366}
   - component: {fileID: 12495369}
   - component: {fileID: 12495370}
+  - component: {fileID: 12495371}
   m_Layer: 0
   m_Name: Stacking Station
   m_TagString: Untagged
@@ -263,8 +264,35 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
+--- !u!50 &12495371
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12495364}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &335152836
 GameObject:
   m_ObjectHideFlags: 0
@@ -1414,6 +1442,10 @@ PrefabInstance:
       propertyPath: playerHolding
       value: 
       objectReference: {fileID: 627314044}
+    - target: {fileID: 5730753391252636991, guid: 163eda57744805b41aafa5dfd0d786cb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7466325578564403982, guid: 163eda57744805b41aafa5dfd0d786cb, type: 3}
       propertyPath: m_Name
       value: Chopping Station

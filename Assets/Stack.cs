@@ -8,6 +8,7 @@ public class Stack : MonoBehaviour
     private GameObject burger;
     private bool isEmpty;
     private bool actionTriggered;
+    public IngredientScriptableObject noneData;
 
     void Start()
     {
@@ -22,6 +23,8 @@ public class Stack : MonoBehaviour
         float height = GetComponent<MeshRenderer>().bounds.size.y;
 
         burger = new GameObject("Burger");
+        burger.AddComponent<Ingredient>().ingredientData = noneData;
+        burger.tag = "Burger";
         burger.transform.parent = this.gameObject.transform;
         burger.transform.position = this.gameObject.transform.position + height / 2 * Vector3.up;
     }
@@ -30,7 +33,7 @@ public class Stack : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (Input.GetKeyDown(KeyCode.E) && !actionTriggered)
+            if (Input.GetKey(KeyCode.E) && !actionTriggered)
             {
                 actionTriggered = true;
 
@@ -59,9 +62,17 @@ public class Stack : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            actionTriggered = false;
+        }
+    }
+
     public void handleStack(GameObject obj)
     {
-        if (obj == null) return;
+        if (obj == null || obj.CompareTag("Burger")) return;
 
         GameObject c = obj.transform.GetChild(0).gameObject;
 
