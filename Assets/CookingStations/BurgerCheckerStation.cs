@@ -35,17 +35,24 @@ public class BurgerCheckerStation : MonoBehaviour
                 {
                     Burger heldBurger = playerHolding.heldObject.GetComponent<Burger>();
 
+                    List<IngredientScriptableObject> compareList = new List<IngredientScriptableObject>();
 
+                    foreach (Ingredient item in heldBurger.ingredients)
+                    {
+                        compareList.Add(item.ingredientData);
+                    }
 
                     if (ingredientsToMatch.Equals(heldBurger.ingredients))
                     {
-                        playerHolding.ResetHeldObject();
+
                     }
                     else
                     {
                         
                     }
-                    Destroy(heldBurger);
+
+                    Destroy(heldBurger.gameObject);
+                    playerHolding.ResetHeldObject();
                 }
             }
 
