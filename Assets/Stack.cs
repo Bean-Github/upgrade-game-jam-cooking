@@ -99,6 +99,7 @@ public class Stack : MonoBehaviour
         obj.transform.parent = burger.transform;
         obj.transform.position = burger.transform.position + offset;
         obj.transform.localScale = Vector3.one;
+        obj.transform.rotation = Quaternion.identity;
 
         Ingredient ing = obj.GetComponent<Ingredient>();
 

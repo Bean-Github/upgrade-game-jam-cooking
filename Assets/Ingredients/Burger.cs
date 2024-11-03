@@ -16,8 +16,8 @@ public class Burger : MonoBehaviour
     {
         foreach (var ingredient in ingredients)
         {
-            ingredient.GetComponent<Ingredient>().DropInWorld();
             ingredient.transform.parent = null;
+            ingredient.GetComponent<Ingredient>().DropInWorld();
         }
         ingredients.Clear();
     }

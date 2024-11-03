@@ -40,6 +40,7 @@ public class PlayerHolding : MonoBehaviour
                 {
                     ingredientToAdd.transform.position = holdingLocation.position;
                     ingredientToAdd.transform.parent = holdingLocation;
+                    ingredientToAdd.transform.localScale = Vector3.one;
 
                     heldObject = ingredientToAdd;
 
