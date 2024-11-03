@@ -8,7 +8,7 @@ public class LockRotation : MonoBehaviour
 
     void Start()
     {
-        _initialRotation = transform.rotation;
+        _initialRotation = Quaternion.identity;
     }
 
     void LateUpdate()
