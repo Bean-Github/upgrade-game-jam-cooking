@@ -98,9 +98,9 @@ public class BurgerCheckerStation : MonoBehaviour
 
     private void DontWinGame()
     {
+        canvasObject.transform.GetComponentInChildren<TextMeshProUGUI>().text = currentText;
         GameObject newObj =  Instantiate(canvasObject, transform);
-        canvasObject.GetComponent<Animator>().Play("BurgerCheckerText");
-        canvasObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentText;
+        newObj.GetComponent<Animator>().Play("BurgerCheckerText");
         Destroy(newObj, 4f);
         losePSystem.Play();
     }
