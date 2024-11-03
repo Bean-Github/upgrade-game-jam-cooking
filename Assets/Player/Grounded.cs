@@ -41,7 +41,7 @@ public class Grounded : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            if (gameObject.activeSelf)
+            if (gameObject.activeSelf && gameObject.activeInHierarchy)
             {
                 StartCoroutine(FoxTrotTimer());
             }
