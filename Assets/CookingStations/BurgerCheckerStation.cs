@@ -10,13 +10,15 @@ public class BurgerCheckerStation : MonoBehaviour
     public List<IngredientScriptableObject> ingredientsToMatch;
 
 
+    public ParticleSystem losePSystem;
+
     private bool playerInTrigger;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerInTrigger = false;
     }
 
     // Update is called once per frame
@@ -35,20 +37,34 @@ public class BurgerCheckerStation : MonoBehaviour
                 {
                     Burger heldBurger = playerHolding.heldObject.GetComponent<Burger>();
 
-                    List<IngredientScriptableObject> compareList = new List<IngredientScriptableObject>();
+                    //List<IngredientScriptableObject> compareList = new List<IngredientScriptableObject>();
 
-                    foreach (Ingredient item in heldBurger.ingredients)
+                    // Check match
+                    bool matches = true;
+
+                    if (heldBurger.ingredients.Count != ingredientsToMatch.Count)
                     {
-                        compareList.Add(item.ingredientData);
-                    }
-
-                    if (ingredientsToMatch.Equals(heldBurger.ingredients))
-                    {
-
+                        matches = false;
                     }
                     else
                     {
-                        
+                        for (int i = 0; i < heldBurger.ingredients.Count; i++)
+                        {
+                            if (heldBurger.ingredients[i].ingredientData.name != ingredientsToMatch[i].name)
+                            {
+                                matches = false;
+                            }
+                        }                        
+                    }
+
+                    // Win or lose
+                    if (matches)
+                    {
+                        WinGame();
+                    }
+                    else
+                    {
+                        DontWinGame();
                     }
 
                     Destroy(heldBurger.gameObject);
@@ -61,11 +77,30 @@ public class BurgerCheckerStation : MonoBehaviour
     }
 
 
+    private void WinGame()
+    {
+
+    }
+
+    private void DontWinGame()
+    {
+        losePSystem.Play();
+    }
+
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             playerInTrigger = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            playerInTrigger = false;
         }
     }
 

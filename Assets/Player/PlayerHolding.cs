@@ -10,6 +10,8 @@ public class PlayerHolding : MonoBehaviour
     public Transform holdingLocation;
     public Ingredient currentIngredient;
 
+    public bool isTouchingWorldIngredient;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -131,6 +133,8 @@ public class PlayerHolding : MonoBehaviour
     {
         heldObject = null;
         currentIngredient = null;
+
+        isTouchingWorldIngredient = false;
     }
 
 
