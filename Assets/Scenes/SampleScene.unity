@@ -1127,10 +1127,6 @@ PrefabInstance:
       propertyPath: playerHolding
       value: 
       objectReference: {fileID: 13118712}
-    - target: {fileID: 5730753391252636991, guid: 163eda57744805b41aafa5dfd0d786cb, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7466325578564403982, guid: 163eda57744805b41aafa5dfd0d786cb, type: 3}
       propertyPath: m_Name
       value: Chopping Station
@@ -1588,13 +1584,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4390843796236681269, guid: 3139b8de75154c74bb59fa33861116f8, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4890745238501028186, guid: 3139b8de75154c74bb59fa33861116f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.81
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4890745238501028186, guid: 3139b8de75154c74bb59fa33861116f8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1632,6 +1624,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7342352953651538949, guid: 3139b8de75154c74bb59fa33861116f8, type: 3}
+      propertyPath: playerHolding
+      value: 
+      objectReference: {fileID: 13118712}
     - target: {fileID: 8004087366503631492, guid: 3139b8de75154c74bb59fa33861116f8, type: 3}
       propertyPath: m_Name
       value: Grill
