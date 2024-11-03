@@ -16,4 +16,4 @@ MonoBehaviour:
   ingredientMesh: {fileID: -2287483877431797496, guid: cb50d0ca8a3f4d643a49db0a6663fb26, type: 3}
   ingredient: 10
   ingredientMaterials:
-  - {fileID: 2100000, guid: 11dd59be7bcf5be45a66c212b1e58651, type: 2}
+  - {fileID: 2100000, guid: 08cde4ecccfb841928cd91d8e019eae1, type: 2}

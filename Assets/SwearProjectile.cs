@@ -24,17 +24,33 @@ public class SwearProjectile : MonoBehaviour
         swear.text = "";
         int charCount = Random.Range(3, 10);
         rec.sizeDelta = new Vector2 (0.7f * charCount, rec.sizeDelta.y);
-        for(int i = 0; i < charCount; i++) {
-            int charNum = Random.Range(1, 8);
-            if (charNum == 1) {swear.text += "!";}
-            else if (charNum == 2) {swear.text += "@";}
-            else if (charNum == 3) {swear.text += "#";}
-            else if (charNum == 4) {swear.text += "$";}
-            else if (charNum == 5) {swear.text += "%";}
-            else if (charNum == 6) {swear.text += "^";}
-            else if (charNum == 7) {swear.text += "&";}
-            else if (charNum == 8) {swear.text += "*";}
+        int swearID = Random.Range(0, 11);
+        if (swearID <= 4)
+        {
+            for(int i = 0; i < charCount; i++) {
+                int charNum = Random.Range(1, 8);
+                if (charNum == 1) {swear.text += "!";}
+                else if (charNum == 2) {swear.text += "@";}
+                else if (charNum == 3) {swear.text += "#";}
+                else if (charNum == 4) {swear.text += "$";}
+                else if (charNum == 5) {swear.text += "%";}
+                else if (charNum == 6) {swear.text += "^";}
+                else if (charNum == 7) {swear.text += "&";}
+                else if (charNum == 8) {swear.text += "*";}
+            }
         }
+        else if (swearID == 5)
+            swear.text = "FAILURE";
+        else if (swearID == 6)
+            swear.text = "DONKEY";
+        else if (swearID == 7)
+            swear.text = "IDIOT";
+        else if (swearID == 8)
+            swear.text = "DONUT";
+        else if (swearID == 9)
+            swear.text = "IT'S RAW";
+        else if (swearID == 10)
+            swear.text = "YOU POOR SOUL";
         //col.size = new Vector2(0.5f, charCount * 0.5f);
         startTime = Time.time;
     }

@@ -31,7 +31,7 @@ public class IdiotSandwich : MonoBehaviour
         }
         if (attacking && Time.time > attackStartTime + 0.75f) {
             //print("end");
-            Destroy(this.gameObject);
+            Destroy(this.gameObject, 0.5f);
         }
     }
 
