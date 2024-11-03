@@ -45,11 +45,11 @@ public class PlayerHolding : MonoBehaviour
         return false;
     }
 
-    public bool TryAddIngredient(GameObject ingredientToAdd, IngredientScriptableObject addedData)
+    public bool TryAddIngredient(GameObject ingredientBlueprint, IngredientScriptableObject addedData)
     {
         if (heldObject == null)
         {
-            GameObject newObject = Instantiate(ingredientToAdd, holdingLocation.position, Quaternion.identity, holdingLocation);
+            GameObject newObject = Instantiate(ingredientBlueprint, holdingLocation.position, Quaternion.identity, holdingLocation);
 
             newObject.GetComponent<Ingredient>().ingredientData = addedData;
 

@@ -1083,10 +1083,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3512950227014697213, guid: 163eda57744805b41aafa5dfd0d786cb, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3573326924053267040, guid: 163eda57744805b41aafa5dfd0d786cb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.99
@@ -1131,6 +1127,10 @@ PrefabInstance:
       propertyPath: playerHolding
       value: 
       objectReference: {fileID: 13118712}
+    - target: {fileID: 5730753391252636991, guid: 163eda57744805b41aafa5dfd0d786cb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7466325578564403982, guid: 163eda57744805b41aafa5dfd0d786cb, type: 3}
       propertyPath: m_Name
       value: Chopping Station
@@ -1588,10 +1588,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2147078466598350186, guid: 3139b8de75154c74bb59fa33861116f8, type: 3}
-      propertyPath: playerHolding
-      value: 
-      objectReference: {fileID: 13118712}
     - target: {fileID: 4390843796236681269, guid: 3139b8de75154c74bb59fa33861116f8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1602,7 +1598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4890745238501028186, guid: 3139b8de75154c74bb59fa33861116f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.01
+      value: -3.88
       objectReference: {fileID: 0}
     - target: {fileID: 4890745238501028186, guid: 3139b8de75154c74bb59fa33861116f8, type: 3}
       propertyPath: m_LocalPosition.z

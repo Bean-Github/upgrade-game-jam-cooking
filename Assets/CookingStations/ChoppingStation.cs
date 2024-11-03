@@ -31,7 +31,6 @@ public class ChoppingStation : CookingStation
             case GameTypes.Ingredient.Onion:
                 StartCookingObject();
                 ingredientToConvertTo = choppedOnion;
-                print("HI");
                 break;
             default:
                 break;
