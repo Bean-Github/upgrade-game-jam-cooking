@@ -26,7 +26,7 @@ public class PlayerHolding : MonoBehaviour
 
     public bool TryAddIngredient(GameObject ingredientToAdd)
     {
-        if (heldObject == null && !heldObject.CompareTag("Burger"))
+        if (heldObject == null)
         {
             //GameObject newObject = Instantiate(ingredientToAdd, holdingLocation.position, Quaternion.identity, holdingLocation);
             
