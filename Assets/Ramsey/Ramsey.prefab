@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextMove: 0
-  moveCD: 4
+  moveCD: 8
   currMove: 0
   volleyCD: 0.5
   nextVolleyAttack: 0

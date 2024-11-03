@@ -74,7 +74,6 @@ public class PlayerMovement : MonoBehaviour
         {
             MidAirBehavior();
         }
-        Debug.Log(xInput);
         if (xInput != 0)
         {
             if (xInput == -1)

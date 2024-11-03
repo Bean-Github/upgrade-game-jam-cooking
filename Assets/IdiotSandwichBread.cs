@@ -18,7 +18,6 @@ public class IdiotSandwichBread : MonoBehaviour
         
     }
     void OnCollisionExit2D(Collision2D collision) {
-        print("Collided");
         if (collision.gameObject.CompareTag("Player")) {
             collision.gameObject.GetComponent<PlayerMovement>().addStun(stunDur, new Vector3(0f, kb,0));
         }
