@@ -22953,7 +22953,7 @@ PrefabInstance:
       objectReference: {fileID: 13118712}
     - target: {fileID: 3774733660630206681, guid: 77b22f4dba2ef594eb4792a031422a6e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.42
+      value: -7.7
       objectReference: {fileID: 0}
     - target: {fileID: 3774733660630206681, guid: 77b22f4dba2ef594eb4792a031422a6e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22994,18 +22994,6 @@ PrefabInstance:
     - target: {fileID: 4062569034473809202, guid: 77b22f4dba2ef594eb4792a031422a6e, type: 3}
       propertyPath: m_Name
       value: Stacking Station
-      objectReference: {fileID: 0}
-    - target: {fileID: 5652760603739922621, guid: 77b22f4dba2ef594eb4792a031422a6e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5652760603739922621, guid: 77b22f4dba2ef594eb4792a031422a6e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 5652760603739922621, guid: 77b22f4dba2ef594eb4792a031422a6e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
