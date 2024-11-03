@@ -93,7 +93,7 @@ public class BurgerCheckerStation : MonoBehaviour
 
     private void WinGame()
     {
-
+        GameObject.Find("Manager").GetComponent<GameManager>().Win();
     }
 
     private void DontWinGame()
