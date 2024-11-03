@@ -552,10 +552,10 @@ MonoBehaviour:
   movementSpeed: 6
   targetX: 0
   targetY: 0
-  minX: -12
-  maxX: 12
-  minY: -3
-  maxY: 7
+  minX: -20
+  maxX: 20
+  minY: 1
+  maxY: 15
 --- !u!114 &4927339531579126612
 MonoBehaviour:
   m_ObjectHideFlags: 0
