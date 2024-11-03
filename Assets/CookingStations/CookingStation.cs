@@ -92,7 +92,7 @@ public class CookingStation : MonoBehaviour
 
     public virtual void PlayerInsertBehavior() 
     {
-        
+
     }
 
     public virtual void PlayerPickupBehavior()
@@ -107,6 +107,8 @@ public class CookingStation : MonoBehaviour
         playerHolding.DropIngredient(storedObjectLocation);
 
         storedObject = storedObjectLocation.GetChild(0).gameObject;
+
+        storedObject.transform.up = -transform.forward;
     }
 
     // Changes displayed object
@@ -122,6 +124,8 @@ public class CookingStation : MonoBehaviour
             Quaternion.identity,
             storedObjectLocation
         );
+
+        storedObject.transform.up = -transform.forward;
 
         storedObject.GetComponent<Ingredient>().ingredientData = ingredientToConvertTo;
 

@@ -13,6 +13,7 @@ public class Ingredient : MonoBehaviour
     void Start()
     {
         ingredientMeshFilter.mesh = ingredientData.ingredientMesh;
+        ingredientMeshFilter.GetComponent<MeshRenderer>().materials = ingredientData.ingredientMaterials;
     }
 
     private void Update()

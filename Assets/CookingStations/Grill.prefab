@@ -83,9 +83,9 @@ MonoBehaviour:
   storedObject: {fileID: 0}
   ingredientToConvertTo: {fileID: 0}
   playerHolding: {fileID: 0}
-  storedObjectLocation: {fileID: 0}
+  storedObjectLocation: {fileID: 8661663767067405601}
   doneCooking: 0
-  ingredientBlueprint: {fileID: 0}
+  ingredientBlueprint: {fileID: 6477841932956585726, guid: d5f444b25335a7b42828d8f7e26d8aa3, type: 3}
   cookTime: 2
   progressSlider: {fileID: 2788363332762062760}
   cookedMeat: {fileID: 11400000, guid: 22d35a359347c834f8b818aa101029b2, type: 2}
@@ -278,11 +278,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6820858511288973575, guid: 268cfc1854b152c4eaced7a6016e573b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8671983639703371747, guid: 268cfc1854b152c4eaced7a6016e573b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

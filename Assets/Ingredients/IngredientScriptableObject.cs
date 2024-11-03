@@ -12,4 +12,5 @@ public class IngredientScriptableObject : ScriptableObject
 
     public GameTypes.Ingredient ingredient;
 
+    public Material[] ingredientMaterials;
 }

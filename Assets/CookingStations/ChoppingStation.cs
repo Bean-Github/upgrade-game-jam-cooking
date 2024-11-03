@@ -18,6 +18,11 @@ public class ChoppingStation : CookingStation
             return;
         }
 
+        if (playerHolding.currentIngredient == null)
+        {
+            return;
+        }
+
         switch (playerHolding.currentIngredient.ingredientData.ingredient)
         {
             case GameTypes.Ingredient.Lettuce:

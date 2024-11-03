@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31de6c0a73c0cad4792355926f07f783, type: 3}
   m_Name: Meat_Raw
   m_EditorClassIdentifier: 
-  ingredientName: 
-  ingredientMesh: {fileID: 0}
-  ingredient: 0
+  ingredientName: Raw Meat
+  ingredientMesh: {fileID: -2287483877431797496, guid: cb50d0ca8a3f4d643a49db0a6663fb26, type: 3}
+  ingredient: 9
+  ingredientMaterials:
+  - {fileID: 2065782725821938271, guid: cb50d0ca8a3f4d643a49db0a6663fb26, type: 3}

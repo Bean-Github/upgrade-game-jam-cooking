@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Onion_Raw
   m_EditorClassIdentifier: 
   ingredientName: Onion
-  ingredientMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  ingredientMesh: {fileID: 3209097409963520316, guid: cb50d0ca8a3f4d643a49db0a6663fb26, type: 3}
   ingredient: 6
+  ingredientMaterials:
+  - {fileID: 8488257151304346975, guid: cb50d0ca8a3f4d643a49db0a6663fb26, type: 3}
+  - {fileID: -8087363164051596766, guid: cb50d0ca8a3f4d643a49db0a6663fb26, type: 3}

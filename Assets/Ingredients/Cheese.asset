@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31de6c0a73c0cad4792355926f07f783, type: 3}
-  m_Name: Lettuce_Raw
+  m_Name: Cheese
   m_EditorClassIdentifier: 
-  ingredientName: Lettuce
-  ingredientMesh: {fileID: -8273424620059847725, guid: cb50d0ca8a3f4d643a49db0a6663fb26, type: 3}
-  ingredient: 2
+  ingredientName: Cheese
+  ingredientMesh: {fileID: -2719439086681959747, guid: cb50d0ca8a3f4d643a49db0a6663fb26, type: 3}
+  ingredient: 8
   ingredientMaterials:
-  - {fileID: -7812543989804872825, guid: cb50d0ca8a3f4d643a49db0a6663fb26, type: 3}
-  - {fileID: 4526775005704449154, guid: cb50d0ca8a3f4d643a49db0a6663fb26, type: 3}
+  - {fileID: -7720851650173870308, guid: cb50d0ca8a3f4d643a49db0a6663fb26, type: 3}

@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Onion_Chopped
   m_EditorClassIdentifier: 
   ingredientName: Chopped Onion
-  ingredientMesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  ingredientMesh: {fileID: -6619533943682586444, guid: cb50d0ca8a3f4d643a49db0a6663fb26, type: 3}
   ingredient: 7
+  ingredientMaterials:
+  - {fileID: -2331131949731351403, guid: cb50d0ca8a3f4d643a49db0a6663fb26, type: 3}
+  - {fileID: 2034285108264361565, guid: cb50d0ca8a3f4d643a49db0a6663fb26, type: 3}

@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: Tomato_Chopped
   m_EditorClassIdentifier: 
   ingredientName: Chopped Tomato
-  ingredientMesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  ingredientMesh: {fileID: -3177037432349238138, guid: cb50d0ca8a3f4d643a49db0a6663fb26, type: 3}
   ingredient: 5
+  ingredientMaterials:
+  - {fileID: 2968718455364155093, guid: cb50d0ca8a3f4d643a49db0a6663fb26, type: 3}
+  - {fileID: 171086388093946308, guid: cb50d0ca8a3f4d643a49db0a6663fb26, type: 3}
+  - {fileID: 1946009628583527091, guid: cb50d0ca8a3f4d643a49db0a6663fb26, type: 3}

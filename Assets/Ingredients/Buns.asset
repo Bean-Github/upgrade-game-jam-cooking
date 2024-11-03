@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Buns
   m_EditorClassIdentifier: 
   ingredientName: Bun
-  ingredientMesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  ingredientMesh: {fileID: 759506092439493106, guid: cb50d0ca8a3f4d643a49db0a6663fb26, type: 3}
   ingredient: 1
+  ingredientMaterials:
+  - {fileID: 2238796764414207470, guid: cb50d0ca8a3f4d643a49db0a6663fb26, type: 3}

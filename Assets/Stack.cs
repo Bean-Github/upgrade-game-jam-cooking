@@ -93,13 +93,13 @@ public class Stack : MonoBehaviour
         Vector3 size = bounds.size;
         Vector3 center = bounds.center;
 
-        Vector3 offset = new Vector3(0, topPos + size.y - center.y, 0);
-        topPos += size.y;
+        Vector3 offset = new Vector3(0, topPos + size.z - center.z, 0);
+        topPos += size.z - center.z;
 
         obj.transform.parent = burger.transform;
         obj.transform.position = burger.transform.position + offset;
         obj.transform.localScale = Vector3.one;
-        obj.transform.rotation = Quaternion.identity;
+        obj.transform.up = -Vector3.forward;
 
         Ingredient ing = obj.GetComponent<Ingredient>();
 

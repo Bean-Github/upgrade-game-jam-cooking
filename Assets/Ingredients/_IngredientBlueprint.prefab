@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3594084900291318889}
   - component: {fileID: 3486062146285710898}
   - component: {fileID: 4635401093295770561}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: _IngredientBlueprint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,14 +27,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6477841932956585726}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6402217007680977159}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &3594084900291318889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 6402217007680977159}
   - component: {fileID: 1679730555143867404}
   - component: {fileID: 4612744741740091937}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ingredient Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,14 +11,20 @@ public class GrillStation : CookingStation
         base.PlayerInsertBehavior();
 
         // Check if compatible
-        if (playerHolding.heldObject == null)
+        if (playerHolding.heldObject == null || playerHolding.CompareTag("Burger"))
         {
             return;
         }
 
+        if (playerHolding.currentIngredient == null)
+        {
+            return;
+        }
+
+
         switch (playerHolding.currentIngredient.ingredientData.ingredient)
         {
-            case GameTypes.Ingredient.CookedMeat:
+            case GameTypes.Ingredient.RawMeat:
                 StartCookingObject();
                 ingredientToConvertTo = cookedMeat;
                 break;
