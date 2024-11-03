@@ -5,7 +5,11 @@ using UnityEngine;
 public class BurgerCheckerStation : MonoBehaviour
 {
     public PlayerHolding playerHolding;
-    
+
+
+    public List<IngredientScriptableObject> ingredientsToMatch;
+
+
     private bool playerInTrigger;
 
 
@@ -18,12 +22,33 @@ public class BurgerCheckerStation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (playerInTrigger)
         {
-            if (playerHolding)
+            if (playerHolding.heldObject == null)
             {
-
+                return;
             }
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (playerHolding.heldObject.CompareTag("Burger"))
+                {
+                    Burger heldBurger = playerHolding.heldObject.GetComponent<Burger>();
+
+
+
+                    if (ingredientsToMatch.Equals(heldBurger.ingredients))
+                    {
+                        playerHolding.ResetHeldObject();
+                    }
+                    else
+                    {
+                        
+                    }
+                    Destroy(heldBurger);
+                }
+            }
+
         }
 
     }

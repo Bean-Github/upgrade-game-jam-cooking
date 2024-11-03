@@ -93,15 +93,13 @@ public class PlayerHolding : MonoBehaviour
             burger.drop();
             heldObject.transform.parent = null;
 
-            heldObject = null;
-            currentIngredient = null;
+            ResetHeldObject();
         } else
         {
             heldObject.GetComponent<Ingredient>().DropInWorld();
             heldObject.transform.parent = null;
 
-            heldObject = null;
-            currentIngredient = null;
+            ResetHeldObject();
         }
     }
 
@@ -129,7 +127,7 @@ public class PlayerHolding : MonoBehaviour
         }
     }
 
-    private void ResetHeldObject()
+    public void ResetHeldObject()
     {
         heldObject = null;
         currentIngredient = null;

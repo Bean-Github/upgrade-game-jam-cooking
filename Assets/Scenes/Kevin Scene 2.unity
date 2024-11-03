@@ -1904,6 +1904,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8ae7b29b8933ed4e863e4bad5b2eeea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHolding: {fileID: 13118712}
+  ingredientsToMatch: []
 --- !u!1 &2137286959
 GameObject:
   m_ObjectHideFlags: 0

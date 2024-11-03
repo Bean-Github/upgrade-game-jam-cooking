@@ -6,7 +6,6 @@ public class Burger : MonoBehaviour
 {
     public List<Ingredient> ingredients;
 
-
     // Start is called before the first frame update
     void Start()
     {
