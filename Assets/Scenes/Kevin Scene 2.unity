@@ -2041,14 +2041,6 @@ PrefabInstance:
       propertyPath: playerHolding
       value: 
       objectReference: {fileID: 13118712}
-    - target: {fileID: 4097599263960053262, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4097599263960053262, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3fdb5383680d69e4a85354bff383090f, type: 2}
     - target: {fileID: 5222997269360136296, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
       propertyPath: m_LocalPosition.x
       value: -37.55
@@ -2093,57 +2085,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Burger Checker
       objectReference: {fileID: 0}
-    - target: {fileID: 6860316630226447546, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
-      propertyPath: TrailModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6860316630226447546, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
-      propertyPath: LightsModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6860316630226447546, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
-      propertyPath: RotationModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6860316630226447546, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
-      propertyPath: InitialModule.startColor.maxGradient.key0.b
-      value: 0.6396227
-      objectReference: {fileID: 0}
-    - target: {fileID: 6860316630226447546, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
-      propertyPath: InitialModule.startColor.maxGradient.key0.g
-      value: 0.94820035
-      objectReference: {fileID: 0}
-    - target: {fileID: 6860316630226447546, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
-      propertyPath: InitialModule.startColor.maxGradient.key0.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6860316630226447546, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
-      propertyPath: InitialModule.startColor.maxGradient.key1.b
-      value: 0.8660377
-      objectReference: {fileID: 0}
-    - target: {fileID: 6860316630226447546, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
-      propertyPath: InitialModule.startColor.maxGradient.key1.g
-      value: 0.99940974
-      objectReference: {fileID: 0}
-    - target: {fileID: 6860316630226447546, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
-      propertyPath: InitialModule.startColor.maxGradient.key1.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6860316630226447546, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
-      propertyPath: InitialModule.startColor.maxGradient.key2.b
-      value: 0.6094339
-      objectReference: {fileID: 0}
-    - target: {fileID: 6860316630226447546, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
-      propertyPath: InitialModule.startColor.maxGradient.key2.g
-      value: 0.8953018
-      objectReference: {fileID: 0}
-    - target: {fileID: 6860316630226447546, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
-      propertyPath: InitialModule.startColor.maxGradient.key2.r
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 4435083124862211176, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
