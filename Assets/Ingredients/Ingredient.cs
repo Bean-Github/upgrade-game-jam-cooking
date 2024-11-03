@@ -40,6 +40,7 @@ public class Ingredient : MonoBehaviour
         Rigidbody2D rb = gameObject.AddComponent<Rigidbody2D>();
 
         rb.drag = 2f;
+        rb.gravityScale = 3f;
 
         transform.localScale = Vector3.one;
 

@@ -454,12 +454,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -20}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.5, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1997839080}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
 MonoBehaviour:
@@ -1083,6 +1083,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1112762735482888242, guid: 163eda57744805b41aafa5dfd0d786cb, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3573326924053267040, guid: 163eda57744805b41aafa5dfd0d786cb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.99
@@ -1127,9 +1131,21 @@ PrefabInstance:
       propertyPath: playerHolding
       value: 
       objectReference: {fileID: 13118712}
+    - target: {fileID: 5730753391252636991, guid: 163eda57744805b41aafa5dfd0d786cb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7466325578564403982, guid: 163eda57744805b41aafa5dfd0d786cb, type: 3}
       propertyPath: m_Name
       value: Chopping Station
+      objectReference: {fileID: 0}
+    - target: {fileID: 7599301387363156955, guid: 163eda57744805b41aafa5dfd0d786cb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8716540620537673940, guid: 163eda57744805b41aafa5dfd0d786cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1390,6 +1406,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e002b7fde7c0be24698dd718efb8a01a, type: 3}
+--- !u!4 &1997839080 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2034878638004955911, guid: 0d42ab99a204b4e4fb269c997ff8cc43, type: 3}
+  m_PrefabInstance: {fileID: 290570903644951826}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2137286959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1573,7 +1594,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2034878638004955911, guid: 0d42ab99a204b4e4fb269c997ff8cc43, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 519420032}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d42ab99a204b4e4fb269c997ff8cc43, type: 3}
 --- !u!1001 &1280890511823482309
@@ -1584,6 +1608,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 837545770863951326, guid: 3139b8de75154c74bb59fa33861116f8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882210707969853137, guid: 3139b8de75154c74bb59fa33861116f8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390843796236681269, guid: 3139b8de75154c74bb59fa33861116f8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4890745238501028186, guid: 3139b8de75154c74bb59fa33861116f8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5
@@ -1632,6 +1668,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grill
       objectReference: {fileID: 0}
+    - target: {fileID: 8942322829273015608, guid: 3139b8de75154c74bb59fa33861116f8, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1641,7 +1681,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 519420032}
   - {fileID: 290570903644951826}
   - {fileID: 335152838}
   - {fileID: 573033175}

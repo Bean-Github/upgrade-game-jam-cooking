@@ -617,6 +617,8 @@ MonoBehaviour:
   jumpDampTime: 0.08
   rb: {fileID: 627314043}
   grounded: {fileID: 583561277}
+  animator: {fileID: 0}
+  modelParent: {fileID: 0}
 --- !u!61 &627314042
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -704,7 +706,6 @@ MonoBehaviour:
   heldObject: {fileID: 0}
   holdingLocation: {fileID: 2068488493}
   currentIngredient: {fileID: 0}
-  inStation: 0
 --- !u!1 &1015281694
 GameObject:
   m_ObjectHideFlags: 0
