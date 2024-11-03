@@ -11371,6 +11371,72 @@ Transform:
   - {fileID: 1801015287}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!1001 &839932112
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1726612656}
+    m_Modifications:
+    - target: {fileID: 2025873449286808631, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: playerHolding
+      value: 
+      objectReference: {fileID: 13118712}
+    - target: {fileID: 5222997269360136296, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 23.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5222997269360136296, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 5222997269360136296, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 5222997269360136296, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5222997269360136296, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5222997269360136296, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5222997269360136296, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5222997269360136296, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5222997269360136296, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5222997269360136296, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6496500353022862698, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+      propertyPath: m_Name
+      value: Burger Checker
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+--- !u!4 &839932113 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5222997269360136296, guid: 59ed5c275f7a73444bec31fba5e83c83, type: 3}
+  m_PrefabInstance: {fileID: 839932112}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &848541905
 GameObject:
   m_ObjectHideFlags: 0
@@ -17391,6 +17457,7 @@ Transform:
   - {fileID: 1939240167}
   - {fileID: 365744880}
   - {fileID: 1943955552}
+  - {fileID: 839932113}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1739910643
