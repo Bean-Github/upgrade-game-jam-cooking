@@ -64,12 +64,12 @@ public class RamseyAttack : MonoBehaviour
         */
 
         if (aggro && !movem.jumping && Time.time > nextMove) {
-            currMove = (Attack)Random.Range(0,2);
             if (currMove == Attack.SwearVolley) {
                 volleyStart = Time.time;
             } else if (currMove == Attack.IdiotSandwich) {
                 Instantiate(idiotSandwhich);
             }
+            currMove = (Attack)Random.Range(0,2);
             nextMove = Time.time + Random.Range(moveCD-2, moveCD+2);
         }
         if (aggro && Time.time < volleyStart + volleyDur && Time.time > nextVolleyAttack) {
