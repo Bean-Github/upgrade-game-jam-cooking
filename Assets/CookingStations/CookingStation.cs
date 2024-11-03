@@ -20,8 +20,6 @@ public class CookingStation : MonoBehaviour
     public float cookTime;
     public Slider progressSlider;
 
-    private bool touchingPlayer;
-
 
     protected void Start()
     {
@@ -46,7 +44,6 @@ public class CookingStation : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            touchingPlayer = true;
 
             // Inserts object into cooking
             if (Input.GetKey(KeyCode.E))
@@ -84,7 +81,6 @@ public class CookingStation : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            touchingPlayer = false;
             ResetSlider();
         }
     }

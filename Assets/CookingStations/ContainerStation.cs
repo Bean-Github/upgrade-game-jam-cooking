@@ -16,6 +16,10 @@ public class ContainerStation : MonoBehaviour
             {
                 PlayerHolding holding = collision.GetComponent<PlayerHolding>();
 
+                if (holding.isTouchingWorldIngredient)
+                {
+                    return;
+                }
 
                 if (holding.TryAddIngredient(ingredientBlueprint, ingredientDataToHold))
                 {

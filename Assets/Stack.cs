@@ -82,6 +82,8 @@ public class Stack : MonoBehaviour
         }
     }
 
+    bool hasFirstItem;
+
     public void handleStack(GameObject obj)
     {
         if (obj == null || obj.CompareTag("Burger")) return;
@@ -103,13 +105,51 @@ public class Stack : MonoBehaviour
 
         Ingredient ing = obj.GetComponent<Ingredient>();
 
-        burger.GetComponent<Burger>().ingredients.Add(ing);
+        switch (ing.ingredientData.ingredient)
+        {
+            case GameTypes.Ingredient.Bun:
+                if (!hasFirstItem)
+                {
+                    obj.transform.up *= -1;
+                }
+                else
+                {
+                    obj.transform.position -= Vector3.up * 0.3f;
+                }
+                break;
 
+            case GameTypes.Ingredient.Lettuce:
+                obj.transform.position -= Vector3.up * 0.8f;
+                break;
+
+            case GameTypes.Ingredient.Tomato:
+                obj.transform.position -= Vector3.up * 0.7f;
+                break;
+
+            case GameTypes.Ingredient.Onion:
+                obj.transform.position -= Vector3.up * 0.95f;
+                break;
+
+            case GameTypes.Ingredient.RawMeat:
+                obj.transform.position -= Vector3.up * 0.05f;
+                break;
+                
+            case GameTypes.Ingredient.CookedMeat:
+                obj.transform.position -= Vector3.up * 0.05f;
+                break;
+
+            default:
+                break;
+        }
+
+        burger.GetComponent<Burger>().ingredients.Add(ing);
+        hasFirstItem = true;
         isEmpty = false;
     }
 
     public void handleRemove()
     {
+        burger.transform.position -= Vector3.up * transform.childCount * 0.5f;
         playerHolding.TryAddIngredient(burger);
 
         topPos = 0f;

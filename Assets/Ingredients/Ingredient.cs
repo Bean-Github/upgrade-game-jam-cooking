@@ -29,7 +29,11 @@ public class Ingredient : MonoBehaviour
 
         transform.localRotation = Quaternion.identity;
 
-        foreach (var boxCollider in GetComponents<BoxCollider2D>())
+        foreach (var boxCollider in GetComponents<Collider2D>())
+        {
+            boxCollider.enabled = false;
+        }
+        foreach (var boxCollider in GetComponentsInChildren<Collider2D>())
         {
             boxCollider.enabled = false;
         }
@@ -43,9 +47,15 @@ public class Ingredient : MonoBehaviour
         rb.drag = 2f;
         rb.gravityScale = 3f;
 
+        rb.angularDrag = 3f;
+
         transform.localScale = Vector3.one;
 
-        foreach (var boxCollider in GetComponents<BoxCollider2D>())
+        foreach (var boxCollider in GetComponents<Collider2D>())
+        {
+            boxCollider.enabled = true;
+        }
+        foreach (var boxCollider in GetComponentsInChildren<Collider2D>())
         {
             boxCollider.enabled = true;
         }
@@ -54,11 +64,25 @@ public class Ingredient : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (transform.parent == null && collision.CompareTag("Player") && Input.GetKey(KeyCode.E))
+        if (collision.CompareTag("Player") )
         {
-            if (collision.GetComponent<PlayerHolding>().TryAddIngredient(this.gameObject))
+            if (transform.parent == null && Input.GetKey(KeyCode.E))
             {
+                if (collision.GetComponent<PlayerHolding>().TryAddIngredient(this.gameObject))
+                {
+                }
             }
+
+            collision.GetComponent<PlayerHolding>().isTouchingWorldIngredient = true;
+
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<PlayerHolding>().isTouchingWorldIngredient = false;
         }
     }
 
