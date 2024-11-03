@@ -60,6 +60,8 @@ public class CookingStation : MonoBehaviour
             // Cooking behavior
             if (storedObject != null && !doneCooking)
             {
+                progressSlider.gameObject.SetActive(true);
+
                 if (Input.GetKey(KeyCode.E))
                 {
                     progressSlider.value += Time.fixedDeltaTime;
@@ -128,8 +130,15 @@ public class CookingStation : MonoBehaviour
 
     protected void ResetSlider()
     {
+        progressSlider.gameObject.SetActive(false);
         progressSlider.value = 0f;
     }
 
 }
+
+
+
+
+
+
 
