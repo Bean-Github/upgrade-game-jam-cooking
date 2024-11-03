@@ -35,7 +35,7 @@ public class SwearProjectile : MonoBehaviour
             else if (charNum == 7) {swear.text += "&";}
             else if (charNum == 8) {swear.text += "*";}
         }
-        col.size = new Vector2(0.5f, charCount * 0.5f);
+        //col.size = new Vector2(0.5f, charCount * 0.5f);
         startTime = Time.time;
     }
 
