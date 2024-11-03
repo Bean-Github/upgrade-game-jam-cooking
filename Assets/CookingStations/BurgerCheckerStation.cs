@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BurgerCheckerStation : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class BurgerCheckerStation : MonoBehaviour
 
     private bool playerInTrigger;
 
+    public GameObject canvasObject;
+
+    private string currentText;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +45,8 @@ public class BurgerCheckerStation : MonoBehaviour
 
                     // Check match
                     bool matches = true;
+                    currentText = "WRONG ORDER";
+
 
                     if (heldBurger.ingredients.Count != ingredientsToMatch.Count)
                     {
@@ -54,7 +60,15 @@ public class BurgerCheckerStation : MonoBehaviour
                             {
                                 matches = false;
                             }
-                        }                        
+
+                            if (heldBurger.ingredients[i].ingredientData.ingredient == GameTypes.Ingredient.Lettuce
+                                || heldBurger.ingredients[i].ingredientData.ingredient == GameTypes.Ingredient.Tomato
+                                || heldBurger.ingredients[i].ingredientData.ingredient == GameTypes.Ingredient.Onion
+                                || heldBurger.ingredients[i].ingredientData.ingredient == GameTypes.Ingredient.RawMeat)
+                            {
+                                currentText = "IT'S RAWW";
+                            }
+                        }
                     }
 
                     // Win or lose
@@ -84,6 +98,10 @@ public class BurgerCheckerStation : MonoBehaviour
 
     private void DontWinGame()
     {
+        GameObject newObj =  Instantiate(canvasObject, transform);
+        canvasObject.GetComponent<Animator>().Play("BurgerCheckerText");
+        canvasObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentText;
+        Destroy(newObj, 4f);
         losePSystem.Play();
     }
 

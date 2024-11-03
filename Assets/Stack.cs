@@ -154,6 +154,7 @@ public class Stack : MonoBehaviour
 
         topPos = 0f;
         initBurger();
+        hasFirstItem = false;
         isEmpty = true;
     }
 }
